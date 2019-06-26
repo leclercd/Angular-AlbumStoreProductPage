@@ -108,12 +108,12 @@ describe("ProductService", () => {
 
     const importRxjs = tsquery(
       ast,
-      "ImportDeclaration StringLiteral[value=rxjs/add/operator/map]"
+      "ImportDeclaration StringLiteral[value=rxjs/operators]"
     );
 
     assert(
       importRxjs.length > 0,
-      "The ProductService isn't importing `map` from `rxjs/add/operator/map`."
+      "The ProductService isn't importing `map` from `rxjs/operators`."
     );
 
     const mapMethod = tsquery(
