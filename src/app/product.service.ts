@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { jsonpFactory } from '@angular/http/src/http_module';
 
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators/map';
+import { map } from 'rxjs/operators';
 
 import { Album } from './album';
 import { Product } from './product';
