@@ -33,15 +33,22 @@ describe('ProductPage', () => {
   }));
 
   it('should have moved the tracklisting div out of the product-page component @product-tracklisting-html-moved', async(() => {
-    since('The ProductTracklistingComponent doesn\'t exist - have you run the `ng` command to generate it yet?').expect(productTracklistingComponentExists).toBe(true);
+    since('The ProductTracklistingComponent doesn\'t exist - have you run the `ng` command to generate it yet?')
+      .expect(productTracklistingComponentExists)
+      .toBe(true);
     since('The ProductPageComponent doesn\'t exist for some reason.').expect(productPageComponentExists).toBe(true);
 
     const ProductPageFixture = TestBed.createComponent(ProductPageComponent);
 
     if (ProductPageFixture.nativeElement.querySelector('app-product-tracklisting')) {
-      since('The ProductPageComponent has the `app-product-tracklisting` selector, but it still contains a `div` tag with a class of `tracklisting` - have you moved it over to the ProductTracklistingComponent yet?').expect(ProductPageFixture.nativeElement.querySelectorAll('div.tracklisting').length).toBe(1);
+      since('The ProductPageComponent has the `app-product-tracklisting` selector, but it still contains a `div` ' +
+        'tag with a class of `tracklisting` - have you moved it over to the ProductTracklistingComponent yet?')
+        .expect(ProductPageFixture.nativeElement.querySelectorAll('div.tracklisting').length)
+        .toBe(1);
     } else {
-      since('The ProductPageComponent still contains a `div` tag with a class of `tracklisting` - have you moved it over to the ProductTracklistingComponent yet?').expect(ProductPageFixture.nativeElement.querySelectorAll('div.tracklisting').length).toBe(0);
+      since('The ProductPageComponent still contains a `div` tag with a class of `tracklisting` - have you moved it ' +
+        'over to the ProductTracklistingComponent yet?')
+        .expect(ProductPageFixture.nativeElement.querySelectorAll('div.tracklisting').length).toBe(0);
     }
   }));
 
@@ -50,11 +57,15 @@ describe('ProductPage', () => {
 
     const ProductPageFixture = TestBed.createComponent(ProductPageComponent);
 
-    since('You haven\'t added the `app-product-tracklisting` selector yet.').expect(ProductPageFixture.nativeElement.querySelector('app-product-tracklisting')).not.toBeNull()
-    since('You haven\'t added the `app-product-tracklisting` selector yet.').expect(ProductPageFixture.nativeElement.querySelector('app-product-tracklisting').nodeName).toBe('APP-PRODUCT-TRACKLISTING');    
+    since('You haven\'t added the `app-product-tracklisting` selector yet.')
+      .expect(ProductPageFixture.nativeElement.querySelector('app-product-tracklisting'))
+      .not.toBeNull()
+    since('You haven\'t added the `app-product-tracklisting` selector yet.')
+      .expect(ProductPageFixture.nativeElement.querySelector('app-product-tracklisting').nodeName)
+      .toBe('APP-PRODUCT-TRACKLISTING');
   }));
-  
-  
+
+
 });
 
 describe('ProductTracklisting', () => {
